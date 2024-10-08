@@ -56,7 +56,13 @@ const AddBook = () => {
         </div>
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Add Book</button>
       </form>
+
+      <div>
+        < Footer />
+      </div>
     </div>
+
+    
   );
 };
 
