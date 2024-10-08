@@ -61,7 +61,11 @@ const EditBook = () => {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div>
+      <div>
+        <Navbar />
+      </div>
+<div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Edit Book</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -119,6 +123,11 @@ const EditBook = () => {
           Update Book
         </button>
       </form>
+    </div>
+    <div>
+      <Footer />
+    </div>
+    
     </div>
   );
 };

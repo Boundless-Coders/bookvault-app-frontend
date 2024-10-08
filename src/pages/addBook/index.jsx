@@ -31,7 +31,12 @@ const AddBook = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+     <div>
+<div>
+  <Navbar />
+</div>
+
+<div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Add New Book</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -57,6 +62,9 @@ const AddBook = () => {
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Add Book</button>
       </form>
 
+     </div>
+
+    
       <div>
         < Footer />
       </div>

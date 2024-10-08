@@ -28,7 +28,11 @@ const BookDetails = () => {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div> 
+      <div>
+        < Navbar />
+      </div>
+<div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-4">{book.title}</h1>
       <p>
         <strong>Author:</strong> {book.author}
@@ -44,6 +48,11 @@ const BookDetails = () => {
       </p>
       <p>{book.description}</p>
     </div>
+    <div>
+      <Footer />
+    </div>
+    </div>
+    
   );
 };
 
