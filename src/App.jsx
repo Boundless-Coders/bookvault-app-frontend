@@ -3,6 +3,7 @@ import "./App.css";
 import BookList from "./pages/bookList";
 import AddBook from "./pages/addBook";
 import BookDetails from "./pages/bookDetails";
+import EditBook from "./pages/editBook";
 
 function App() {
   const router = createBrowserRouter([
@@ -18,6 +19,10 @@ function App() {
     {
       path: "/books/:id",
       element: <BookDetails />,
+    },
+    {
+      path: "/edit-book/:id",
+      element: <EditBook />
     },
   ]);
 
