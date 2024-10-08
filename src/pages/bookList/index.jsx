@@ -23,7 +23,12 @@ const BookList = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div>
+<div>
+  <Navbar />
+</div>
+
+<div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Books List</h1>
       <Link to="/add-new" className="bg-blue-500 text-white px-4 py-2 rounded">Add Book</Link>
       <table className="min-w-full mt-4">
@@ -47,6 +52,10 @@ const BookList = () => {
           ))}
         </tbody>
       </table>
+    </div>
+    <div>
+      <Footer />
+    </div>
     </div>
   );
 };
