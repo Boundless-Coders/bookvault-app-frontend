@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.img {
+  background-image: url(./assets/images/image2.jpg);
+  /* height: 100vh;
+  width: 10vw; */
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.jpg{
+  background-image: url(./assets/images/image.png);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.bg{
+  background-image: url(./assets/images/bg.jpg);
+  background-size: cover;
+}

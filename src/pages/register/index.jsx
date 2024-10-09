@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +9,7 @@ const Register = () => {
     confirmPassword: '',
   });
   const [error, setError] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,7 +24,7 @@ const Register = () => {
     // Here you would typically send the registration data to your backend
     console.log('Registration data:', formData);
     // For now, we'll just redirect to the home page
-    history.push('/');
+    navigate('/register');
   };
 
   return (
@@ -96,6 +95,13 @@ const Register = () => {
           Register
         </button>
       </form>
+      <p className="mt-4 text-center">
+        Already have an account?{' '}
+       <Link to="/login" className="text-blue-500 hover:underline">
+       
+          Login here
+       </Link>
+      </p>
     </div>
   );
 };

@@ -1,111 +1,79 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
-const App = () => {
-  const [isLogin, setIsLogin] = useState(true);
-  const [loginEmail, setLoginEmail] = useState('');
-  const [loginPassword, setLoginPassword] = useState('');
-  const [registerEmail, setRegisterEmail] = useState('');
-  const [registerPassword, setRegisterPassword] = useState('');
+const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const toggleForms = () => {
-    setIsLogin(!isLogin);
-  };
-
-  const handleLogin = () => {
-    alert(`Login attempted with Email: ${loginEmail}`);
-    // Add your login logic here (e.g., API call)
-  };
-
-  const handleRegister = () => {
-    alert(`Registration attempted with Email: ${registerEmail}`);
-    // Add your registration logic here (e.g., API call)
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Username:", username);
+    console.log("Password:", password);
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md bg-white shadow-md rounded-lg p-8">
-        {isLogin ? (
-          <div id="login-form">
-            <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
-            <div className="mb-4">
-              <label className="block text-gray-700" htmlFor="login-email">Email</label>
-              <input
-                className="mt-1 block w-full p-2 border border-gray-300 rounded"
-                type="email"
-                id="login-email"
-                value={loginEmail}
-                onChange={(e) => setLoginEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700" htmlFor="login-password">Password</label>
-              <input
-                className="mt-1 block w-full p-2 border border-gray-300 rounded"
-                type="password"
-                id="login-password"
-                value={loginPassword}
-                onChange={(e) => setLoginPassword(e.target.value)}
-                required
-              />
-            </div>
-            <div className="mb-6">
-              <button
-                className="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600"
-                onClick={handleLogin}
-              >
-                Login
-              </button>
-            </div>
-            <div className="text-center">
-              <a href="#" className="text-blue-500" onClick={toggleForms}>
-                Don't have an account? Register
-              </a>
-            </div>
+      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+        <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">
+          Login
+        </h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label
+              htmlFor="username"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Username
+            </label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+            />
           </div>
-        ) : (
-          <div id="register-form">
-            <h2 className="text-2xl font-bold text-center mb-6">Register</h2>
-            <div className="mb-4">
-              <label className="block text-gray-700" htmlFor="register-email">Email</label>
-              <input
-                className="mt-1 block w-full p-2 border border-gray-300 rounded"
-                type="email"
-                id="register-email"
-                value={registerEmail}
-                onChange={(e) => setRegisterEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700" htmlFor="register-password">Password</label>
-              <input
-                className="mt-1 block w-full p-2 border border-gray-300 rounded"
-                type="password"
-                id="register-password"
-                value={registerPassword}
-                onChange={(e) => setRegisterPassword(e.target.value)}
-                required
-              />
-            </div>
-            <div className="mb-6">
-              <button
-                className="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600"
-                onClick={handleRegister}
-              >
-                Register
-              </button>
-            </div>
-            <div className="text-center">
-              <a href="#" className="text-blue-500" onClick={toggleForms}>
-                Already have an account? Login
-              </a>
-            </div>
+          <div className="mb-4">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+            />
           </div>
-        )}
+          <button
+            type="submit"
+            className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-500 transition-colors"
+          >
+            Login
+          </button>
+        </form>
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-600">
+            <a href="/register" className="text-indigo-600 hover:underline">
+              Create an account
+            </a>
+          </p>
+          <p className="text-sm text-gray-600">
+            <a
+              href="/forgot-password"
+              className="text-indigo-600 hover:underline"
+            >
+              Forgot password?
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default App;
+export default Login;
