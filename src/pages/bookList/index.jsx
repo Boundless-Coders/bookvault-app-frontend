@@ -1,75 +1,61 @@
-import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 import { useState, useEffect } from "react";
-import { getAllBooks, deleteBook } from "../../services";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchBooks = async () => {
-      const response = await getAllBooks();
-      setBooks(response.data.data);
+      try {
+        
+        const response = await axios.get("https://bookvault-app-backend-3.onrender.com");
+        setBooks(response.data.works); 
+      } catch (error) {
+        console.error("Error fetching books:", error);
+        setError("Failed to fetch books.");
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchBooks();
   }, []);
 
-  const handleDelete = async (id) => {
-    await deleteBook(id);
-    setBooks(books.filter((book) => book._id !== id));
-  };
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
-
+      <Navbar />
       <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Books List</h1>
-        <Link
-          to="/add-new"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
-          Add Book
-        </Link>
-        <table className="min-w-full mt-4">
-          <thead>
-            <tr>
-              <th className="px-4 py-2">Title</th>
-              <th className="px-4 py-2">Author</th>
-              <th className="px-4 py-2">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {books.map((book) => (
-              <tr key={book._id}>
-                <td className="border px-4 py-2">{book.title}</td>
-                <td className="border px-4 py-2">{book.author}</td>
-                <td className="border px-4 py-2">
-                  <Link
-                    to={`/edit-book/${book._id}`}
-                    className="bg-yellow-500 text-white px-2 py-1 rounded"
-                  >
-                    Edit
-                  </Link>
-                  <button
-                    onClick={() => handleDelete(book._id)}
-                    className="bg-red-500 text-white px-2 py-1 ml-2 rounded"
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <h1 className="text-3xl font-bold mb-4">Book List</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {books.map((book) => (
+            <div key={book.key} className="border p-4 rounded-lg shadow">
+              <h2 className="text-xl font-bold mb-2">{book.title}</h2>
+              <p><strong>Author:</strong> {book.authors && book.authors[0]?.name}</p>
+              <p><strong>Subject:</strong> {book.subject}</p>
+              <Link
+                to={`/books/${book.key.split("/")[2]}`}
+                className="text-blue-500 mt-2 inline-block"
+              >
+                View Details
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

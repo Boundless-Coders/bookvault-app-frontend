@@ -41,7 +41,7 @@ const BookDetails = () => {
         <strong>Genre:</strong> {book.genre}
       </p>
       <p>
-        <strong>Published Year:</strong> {book.publishedYear}
+        <strong>Publication Date:</strong> {book.publicationDate}
       </p>
       <p>
         <strong>Description:</strong>

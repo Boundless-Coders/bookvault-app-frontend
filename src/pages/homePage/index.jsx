@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -20,49 +21,14 @@ const Home = () => {
           maintain your books with ease.
         </p>
 
-        {/* Navigation to login page
-            <Link to="/login">
-                <button className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-500 transition-colors">
-                    Go to Login
-                </button>
-            </Link> */}
+        {/* Add Book Button */}
+        <Link to="/add-new">
+          <button className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-500 transition-colors">
+            Add a Book
+          </button>
+        </Link>
 
-        <div className="mt-12 w-full max-w-4xl">
-          <h2 className="text-3xl font-semibold text-gray-700 mb-4">
-            Features
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Detailed Book Information
-              </h3>
-              <p className="text-gray-600">
-                Stores and access comprehensive book data, including
-                descriptions, author details, and genres.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Simple Book Management
-              </h3>
-              <p className="text-gray-600">
-                Easily create, edit, and delete books from your library with a
-                few clicks.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                Real-time Feedback
-              </h3>
-              <p className="text-gray-600">
-                Success and error notifications help keep track of actions,
-                ensuring a smooth user experience
-              </p>
-            </div>
-          </div>
-        </div>
+        
       </div>
       <div>
         <Footer />
