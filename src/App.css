@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+TC:wght@100..900&family=Protest+Strike&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +21,24 @@
 }
 
 .bg{
-  background-image: url(./assets/images/bg.jpg);
+  background-image: url(./assets/images/newbg.jpg);
   background-size: cover;
+}
+
+.logo{
+  background-image: url(../src/assets/images/bv-logo.png);
+  height: 30vh;
+  width: 30vw;
+  background-size: 10%;
+  padding: 12px 24px;
+  margin-top: 0.6rem;
+  background-repeat: no-repeat;
+  justify-content: space-between;
+}
+
+.h1{
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(3, 122, 83);
 }
