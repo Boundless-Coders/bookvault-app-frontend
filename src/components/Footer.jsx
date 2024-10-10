@@ -1,3 +1,4 @@
+import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import React, { useState } from 'react';
 
 const Footer = () => {
@@ -22,14 +23,14 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-white mt-8 font-sans">
-      <div className="container mx-auto px-2 py-8">  
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
+      <div className="container mx-auto px-2 py-4">  
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8  ">
+          {/* <div>
             <h3 className="text-2xl font-semibold mb-4">About Us</h3>
             <p className="text-base">
               BookVault is dedicated to providing the best library management system to help you organize and manage your book collection efficiently.
             </p>
-          </div>
+          </div> */}    
           <div>
             <h3 className="text-2xl font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -45,7 +46,26 @@ const Footer = () => {
             <p className="text-base">Buro, Osu-Accra</p>
             <p className="text-base">Phone: (+233) 559-259-661</p>
             <p className="text-base">Email: boundlesscoders@gmail.com</p>
+            <div className="flex space-x-4 mt-4">
+              <a href="#" className="text-white hover:text-blue-300">
+              <Facebook size={24} />
+                <span className="sr-only">Facebook</span>
+              </a>
+              <a href="#" className="text-white hover:text-blue-300">
+              <Twitter size={24} />
+                <span className="sr-only">Twitter</span>
+              </a>
+              <a href="#" className="text-white hover:text-blue-300">
+              <Linkedin size={24} />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+              <a href="#" className="text-white hover:text-blue-300">
+              <Instagram size={24} />
+                <span className="sr-only">Instagram</span>
+              </a>
+            </div>
           </div>
+          
 
           <div>
             <h3 className="text-2xl font-semibold mb-4">Send us a message</h3>
@@ -82,24 +102,7 @@ const Footer = () => {
                 Send Message
               </button>
             </form>
-            <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-white hover:text-blue-300">
-                
-                <span className="sr-only">Facebook</span>
-              </a>
-              <a href="#" className="text-white hover:text-blue-300">
-                
-                <span className="sr-only">Twitter</span>
-              </a>
-              <a href="#" className="text-white hover:text-blue-300">
-                
-                <span className="sr-only">LinkedIn</span>
-              </a>
-              <a href="#" className="text-white hover:text-blue-300">
-               
-                <span className="sr-only">Instagram</span>
-              </a>
-            </div>
+            
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
