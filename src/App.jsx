@@ -8,6 +8,7 @@ import Login from "./pages/login";
 import Home from "./pages/homePage";
 import Register from "./pages/register";
 import Testimonials from "./pages/testimonials";
+import AboutUs from "./pages/aboutUs";
 
 function App() {
   const router = createBrowserRouter([
@@ -43,6 +44,10 @@ function App() {
     {
       path: "/testimonials",
       element: <Testimonials />
+    },
+    {
+      path: "/about",
+      element: <AboutUs />
     }
   ]);
 
