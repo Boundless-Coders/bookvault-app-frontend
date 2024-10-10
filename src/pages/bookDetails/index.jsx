@@ -2,7 +2,6 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 
 import { useState, useEffect } from "react";
-import { getBookById } from "../../services";
 import { useParams } from "react-router-dom";
 
 const BookDetails = () => {
