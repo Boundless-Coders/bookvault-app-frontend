@@ -8,8 +8,16 @@ const TeamMember = ({ name, position, imageUrl }) => (
     <motion.div
         whileHover={{ scale: 1.05 }}
         className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center"
-    >
-        <img src={imageUrl} alt={name} className="w-32 h-32 rounded-full mb-4 border-4 border-green-500" />
+    >  
+        {/* <img src={imageUrl} alt={name}  className="w-32 h-32 rounded-full mb-4 border-4 border-green-500" /> */}
+        <div className="w-32 h-32 rounded-full mb-4 border-4 border-green-500 overflow-hidden">
+            <img 
+                src={imageUrl} 
+                alt={name} 
+                className="w-full h-full object-cover object-center"
+            />
+        </div>
+
         <h3 className="text-xl font-semibold text-gray-800">{name}</h3>
         <p className="text-green-600 font-medium">{position}</p>
     </motion.div>
@@ -38,25 +46,25 @@ const AboutUs = () => {
         {
             name: "Mary-Magdalene",
             position: "Head Librarian/Backend Dev",
-            imageUrl: "/api/placeholder/150/150"
+            imageUrl: "/src/assets/images/mary.jpeg"
         },
 
         {
             name: "Believe Kwamitse",
             position: "Lead Developer/Frontend Dev",
-            imageUrl: "/api/placeholder/150/150"
+            imageUrl: "/src/assets/images/believe_img.jpeg"
         },
 
         {
             name: "Roberta Ayettey",
             position: "UX Designer/Frontend Dev",
-            imageUrl: "/api/placeholder/150/150"
+            imageUrl: "/src/assets/images/roberta.jpg"
         },
 
         {
             name: "Daniel Essel",
             position: "Marketing Director/Frontend Dev",
-            imageUrl: "/api/placeholder/150/150"
+            imageUrl: "/src/assets/images/daniel.jpeg"
         },
 
     ];
