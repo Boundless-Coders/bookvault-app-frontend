@@ -9,7 +9,7 @@ const Contact = () => <h2>Contact Page</h2>;
 
 const Navbar = () => {
   return (
-    <nav className='flex justify-around ml-2.5 h-16'>
+    <nav className='flex justify-around bg-green-200 h-16'>
       <div className='logo h-11'>
         <div className='h1 ml-5'>
           <h1>BookVault</h1>
@@ -23,11 +23,11 @@ const Navbar = () => {
           <Link to="/about">About</Link>
         </li>
         <li className='no-underline px-4 py-2 rounded-lg text-black hover:bg-green-500 hover:text-white'>
-          <Link to="/contact">Contact</Link>
+          <Link to="/testimonials">Reviews</Link>
         </li>
-        <li className='no-underline px-4 py-2 rounded-lg text-black hover:bg-green-500 hover:text-white'>
+        {/* <li className='no-underline px-4 py-2 rounded-lg text-black hover:bg-green-500 hover:text-white'>
           <Link to="/register">Register</Link>
-        </li>
+        </li> */}
         <li className='no-underline inline-block px-4 py-2 rounded text-black hover:bg-green-500 hover:text-white'>
         <Link to="/Login">Login</Link>
         </li>

@@ -21,92 +21,112 @@ const Register = () => {
       setError('Passwords do not match');
       return;
     }
-    // Here you would typically send the registration data to your backend
     console.log('Registration data:', formData);
-    // For now, we'll just redirect to the home page
     navigate('/register');
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-    <div className="max-w-md w-full mx-auto p-4 sm:p-6">
-      <h2 className="text-2xl font-bold mb-5 text-center">Register</h2>
-
-      {/* Responsive form container */}
-      <div className="bg-white p-6 sm:p-8 shadow-lg rounded-lg">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="username" className="block mb-1 font-medium">
-              Username
-            </label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              required
-              className="w-full px-3 py-2 border rounded-md"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block mb-1 font-medium">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full px-3 py-2 border rounded-md"
-            />
-          </div>
-          <div>
-            <label htmlFor="password" className="block mb-1 font-medium">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-              className="w-full px-3 py-2 border rounded-md"
-            />
-          </div>
-          <div>
-            <label htmlFor="confirmPassword" className="block mb-1 font-medium">
-              Confirm Password
-            </label>
-            <input
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              required
-              className="w-full px-3 py-2 border rounded-md"
-            />
-          </div>
-          {error && <p className="text-red-500">{error}</p>}
-          <button
-            type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300"
-          >
+    <div className="min-h-screen flex items-center justify-center bg-green-100">
+      <div className="container mx-auto p-4 flex justify-center">
+        <div className="w-full max-w-lg bg-white shadow-2xl rounded-3xl p-8">
+          <h2 className="text-4xl font-bold mb-6 text-center text-green-400">
             Register
-          </button>
-        </form>
-      </div>
+          </h2>
 
-      <p className="mt-4 text-center">
-        Already have an account?{' '}
-        <Link to="/login" className="text-blue-500 hover:underline">
-          Login here
-        </Link>
-      </p>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="relative">
+              <label
+                htmlFor="username"
+                className="block mb-2 text-gray-700 text-lg font-semibold"
+              >
+                Username
+              </label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-gray-100 border-2 border-transparent focus:border-green-500 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out focus:outline-none"
+              />
+            </div>
+
+            <div className="relative">
+              <label
+                htmlFor="email"
+                className="block mb-2 text-gray-700 text-lg font-semibold"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-gray-100 border-2 border-transparent focus:border-green-500 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out focus:outline-none"
+              />
+            </div>
+
+            <div className="relative">
+              <label
+                htmlFor="password"
+                className="block mb-2 text-gray-700 text-lg font-semibold"
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-gray-100 border-2 border-transparent focus:border-green-500 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out focus:outline-none"
+              />
+            </div>
+
+            <div className="relative">
+              <label
+                htmlFor="confirmPassword"
+                className="block mb-2 text-gray-700 text-lg font-semibold"
+              >
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-gray-100 border-2 border-transparent focus:border-green-500 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out focus:outline-none"
+              />
+            </div>
+
+            {error && <p className="text-red-500 text-center">{error}</p>}
+
+            <div className="flex justify-center mt-6">
+              <button
+                type="submit"
+                className="w-[200px] py-3 bg-green-500 text-white font-bold rounded-full shadow-lg hover:bg-green-600"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+
+          <div className="mt-6 text-center">
+            <p className="text-sm text-gray-600">
+              Already have an account?{' '}
+              <Link to="/login" className="text-green-500 hover:underline">
+                Login here
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

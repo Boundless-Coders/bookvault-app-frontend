@@ -7,7 +7,6 @@ const EditBook = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  
   const [book, setBook] = useState({
     title: "",
     author: "",
@@ -27,90 +26,100 @@ const EditBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Updated book details:", book);
-    // Normally, you'd call an API to save this data, but here we're just logging it
-    navigate(`/books/${id}`); // Simulate a redirect after submission
+    navigate(`/books/${id}`);
   };
 
   return (
     <div>
       <Navbar />
 
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
-      <div className="container mx-auto p-4 flex justify-center">
-        <div className="w-full max-w-lg">  
-          <h1 className="text-3xl font-bold mb-4 text-center text-green-600">Edit Book</h1>
-          
-          <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg">
-            <div>
-              <label className="block mb-2">
-                Title:
+      <div className="min-h-screen flex items-center justify-center bg-green-100">
+        <div className="container mx-auto p-4 flex justify-center">
+          <div className="w-full max-w-lg bg-white shadow-2xl rounded-3xl p-8">
+            <h1 className="text-4xl font-bold mb-6 text-center text-green-400 ">
+              Edit Book
+            </h1>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="relative">
+                <label className="block mb-2 text-gray-700 text-lg font-semibold">
+                  Title:
+                </label>
                 <input
                   type="text"
                   name="title"
                   value={book.title}
                   onChange={handleChange}
-                  className="border p-2 w-full"
+                  className="w-full px-4 py-3 bg-gray-100 border-2 border-transparent focus:border-green-500 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out focus:outline-none"
+                  placeholder=""
                 />
-              </label>
-            </div>
-            <div>
-              <label className="block mb-2">
-                Author:
+              </div>
+
+              <div className="relative">
+                <label className="block mb-2 text-gray-700 text-lg font-semibold">
+                  Author:
+                </label>
                 <input
                   type="text"
                   name="author"
                   value={book.author}
                   onChange={handleChange}
-                  className="border p-2 w-full"
+                  className="w-full px-4 py-3 bg-gray-100 border-2 border-transparent focus:border-green-500 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out focus:outline-none"
+                  placeholder=""
                 />
-              </label>
-            </div>
-            <div>
-              <label className="block mb-2">
-                Genre:
+              </div>
+
+              <div className="relative">
+                <label className="block mb-2 text-gray-700 text-lg font-semibold">
+                  Genre:
+                </label>
                 <input
                   type="text"
                   name="genre"
                   value={book.genre}
                   onChange={handleChange}
-                  className="border p-2 w-full"
+                  className="w-full px-4 py-3 bg-gray-100 border-2 border-transparent focus:border-green-500 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out focus:outline-none"
+                  placeholder=""
                 />
-              </label>
-            </div>
-            <div>
-              <label className="block mb-2">
-                Publication Date:
+              </div>
+
+              <div className="relative">
+                <label className="block mb-2 text-gray-700 text-lg font-semibold">
+                  Publication Date:
+                </label>
                 <input
                   type="date"
                   name="publicationDate"
                   value={book.publicationDate}
                   onChange={handleChange}
-                  className="border p-2 w-full"
+                  className="w-full px-4 py-3 bg-gray-100 border-2 border-transparent focus:border-green-500 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out focus:outline-none"
                 />
-              </label>
-            </div>
-            <div>
-              <label className="block mb-2">
-                Description:
+              </div>
+
+              <div className="relative">
+                <label className="block mb-2 text-gray-700 text-lg font-semibold">
+                  Description:
+                </label>
                 <textarea
                   name="description"
                   value={book.description}
                   onChange={handleChange}
-                  className="border p-2 w-full"
-                />
-              </label>
-            </div>
-            <div className="flex justify-center mt-6">
-            <button
-              type="submit"
-              className="w-[200px] text-center bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition-colors"
-            >
-              Save Changes
-            </button>
-            </div>
-            
-          </form>
-        </div>
+                  className="w-full px-4 py-3 bg-gray-100 border-2 border-transparent focus:border-green-500 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out focus:outline-none"
+                  rows="4"
+                  placeholder=""
+                ></textarea>
+              </div>
+
+              <div className="flex justify-center mt-6">
+                <button
+                  type="submit"
+                  className="w-[200px] py-3 bg-green-500 text-white font-bold rounded-full shadow-lg hover:bg-green-600"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
       <Footer />
