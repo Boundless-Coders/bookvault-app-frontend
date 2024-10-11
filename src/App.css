@@ -42,3 +42,8 @@
   font-style: normal;
   color: rgb(3, 122, 83);
 }
+
+.container{
+  align-items: center;
+  margin-left: 20rem;
+}
