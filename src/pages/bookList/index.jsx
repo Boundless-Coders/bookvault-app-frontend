@@ -27,15 +27,16 @@ const BookList = () => {
   return (
     <div>
       <Navbar />
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-4">Book List</h1>
+      <div className=" bg-green-100 ">
+        <div className="text-3xl mt-4 mb-6 ">
+        <h1 className= "flex justify-center text-green-400">Book List</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {books.map((book, index) => {
             return (
               <div key={index} className="flex flex-col w-full items-center">
                 {" "}
                 
-                <img src='https://drive.google.com/file/d/1xw9xtL4AP6R6dPF3vm-SN2-WwyEJ5kwA/view' alt="book cover" className="h-[300px]" />
+                <img src='https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781398531734/it-ends-with-us-9781398531734_xlg.jpg' alt="book cover" className="h-[300px]" />
                 
                 <Link to={`/books/${book._id}`} className="text-blue-500">
                   {book.title}
@@ -48,6 +49,7 @@ const BookList = () => {
         </div>
       </div>
       <Footer />
+      </div>
     </div>
   );
 };

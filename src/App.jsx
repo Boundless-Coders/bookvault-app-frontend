@@ -9,6 +9,7 @@ import Home from "./pages/homePage";
 import Register from "./pages/register";
 import Testimonials from "./pages/testimonials";
 import AboutUs from "./pages/aboutUs";
+import Footer from "./components/Footer";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,7 +23,7 @@ function App() {
       element: <AddBook />,
     },
     {
-      path: "/books/:id",
+      path: "/book/:id",
       element: <BookDetails />,
     },
     {
@@ -43,14 +44,17 @@ function App() {
     },
     {
       path: "/testimonials",
-      element: <Testimonials />
+      element: <Testimonials />,
     },
     {
       path: "/about",
-      element: <AboutUs />
-    }
+      element: <AboutUs />,
+    },
+    {
+      path: "/footer",
+      element: <Footer />,
+    },
   ]);
-
 
   return <RouterProvider router={router} />;
 }

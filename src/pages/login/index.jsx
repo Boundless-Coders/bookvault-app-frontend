@@ -11,65 +11,70 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">
-          Login
-        </h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label
-              htmlFor="username"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Username
-            </label>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-500 transition-colors"
-          >
+    <div className="min-h-screen flex items-center justify-center bg-green-100">
+      <div className="container mx-auto p-4 flex justify-center">
+        <div className="w-full max-w-lg bg-white shadow-2xl rounded-3xl p-8">
+          <h2 className="text-4xl font-bold mb-6 text-center text-green-400">
             Login
-          </button>
-        </form>
-        <div className="mt-6 text-center">
-          <p className="text-sm text-gray-600">
-            <a href="/register" className="text-indigo-600 hover:underline">
-              Create an account
-            </a>
-          </p>
-          <p className="text-sm text-gray-600">
-            <a
-              href="/forgot-password"
-              className="text-indigo-600 hover:underline"
-            >
-              Forgot password?
-            </a>
-          </p>
+          </h2>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="relative">
+              <label
+                htmlFor="username"
+                className="block mb-2 text-gray-700 text-lg font-semibold"
+              >
+                Username
+              </label>
+              <input
+                type="text"
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+                className="w-full px-4 py-3 bg-gray-100 border-2 border-transparent focus:border-green-500 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out focus:outline-none"
+              />
+            </div>
+
+            <div className="relative">
+              <label
+                htmlFor="password"
+                className="block mb-2 text-gray-700 text-lg font-semibold"
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="w-full px-4 py-3 bg-gray-100 border-2 border-transparent focus:border-green-500 rounded-full shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out focus:outline-none"
+              />
+            </div>
+
+            <div className="flex justify-center mt-6">
+              <button
+                type="submit"
+                className="w-[200px] py-3 bg-green-500 text-white font-bold rounded-full shadow-lg hover:bg-green-600"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+
+          <div className="mt-6 text-center">
+            <p className="text-sm text-gray-600">
+              <a href="/register" className="text-green-500 hover:underline">
+                Create an account
+              </a>
+            </p>
+            <p className="text-sm text-gray-600">
+              <a href="/forgot-password" className="text-green-500 hover:underline">
+                Forgot password?
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
